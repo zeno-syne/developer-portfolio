@@ -24,24 +24,22 @@ const projects = [
     featured: true,
     status: "Live",
     statusColor: "bg-emerald-500",
-    category: "Single-Page Application",
-    title: "Sistem Reservasi & Menu Digital Warkop Modern",
-    problem:
-      "Kasir kedai kopi sering kewalahan mencatat reservasi meja secara manual via WhatsApp, dan pelanggan kesulitan melihat menu terbaru karena foto menu di Instagram sering tertumpuk.",
-    solution:
-      "Membangun Single-Page Application (SPA) dengan Next.js yang memiliki katalog menu interaktif dengan filter kategori instan, serta formulir reservasi meja real-time yang langsung memberikan notifikasi konfirmasi ke pelanggan.",
-    result:
-      "Aplikasi selesai dikembangkan dan live dalam waktu kurang dari 48 jam. Pelanggan kini bisa melihat menu dan booking meja langsung dari smartphone tanpa harus antre chat, membuat operasional warkop menjadi jauh lebih efisien.",
+    category: "Web Application",
+    title: "Warkop Modern App",
+    description:
+      "Aplikasi manajemen warkop (warung kopi) modern berbasis web dengan fitur pemesanan digital, manajemen menu real-time, dashboard analitik penjualan, dan sistem loyalty pelanggan. Dibangun untuk meningkatkan efisiensi operasional dan pengalaman pelanggan.",
     highlights: [
-      { icon: ShoppingCart, text: "Katalog menu interaktif + filter kategori" },
-      { icon: BarChart3, text: "Reservasi meja real-time" },
-      { icon: Wifi, text: "Live dalam < 48 jam" },
+      { icon: ShoppingCart, text: "Sistem order digital" },
+      { icon: BarChart3, text: "Dashboard analitik real-time" },
+      { icon: Wifi, text: "Mode offline-first PWA" },
     ],
-    tech: ["Next.js", "Tailwind CSS", "Vercel"],
+    tech: ["Next.js", "Tailwind CSS", "Supabase", "Vercel", "TypeScript"],
     techColors: {
       "Next.js": "bg-white/10 text-white",
       "Tailwind CSS": "bg-cyan-500/15 text-cyan-300",
+      Supabase: "bg-emerald-500/15 text-emerald-300",
       Vercel: "bg-slate-500/15 text-slate-300",
+      TypeScript: "bg-blue-500/15 text-blue-300",
     },
     demoUrl: "#",
     codeUrl: "#",
@@ -161,36 +159,14 @@ export default function ProjectsSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-black text-white mb-5 flex items-start gap-3">
-                    <Coffee className="w-7 h-7 text-amber-400 flex-shrink-0 mt-1" />
+                  <h3 className="text-3xl md:text-4xl font-black text-white mb-4 flex items-center gap-3">
+                    <Coffee className="w-8 h-8 text-amber-400" />
                     {project.title}
                   </h3>
 
-                  {/* Problem / Solution / Result blocks */}
-                  <div className="space-y-3 mb-6">
-                    {project.problem && (
-                      <div className="rounded-xl p-4 bg-red-500/8 border border-red-500/20">
-                        <p className="text-xs font-bold text-red-400 uppercase tracking-widest mb-1.5">🔴 Masalah</p>
-                        <p className="text-slate-300 text-sm leading-relaxed">{project.problem}</p>
-                      </div>
-                    )}
-                    {project.solution && (
-                      <div className="rounded-xl p-4 bg-cyan-500/8 border border-cyan-500/20">
-                        <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-1.5">💡 Solusi</p>
-                        <p className="text-slate-300 text-sm leading-relaxed">{project.solution}</p>
-                      </div>
-                    )}
-                    {project.result && (
-                      <div className="rounded-xl p-4 bg-emerald-500/8 border border-emerald-500/20">
-                        <p className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1.5">✅ Hasil</p>
-                        <p className="text-slate-300 text-sm leading-relaxed">{project.result}</p>
-                      </div>
-                    )}
-                    {/* Fallback for projects without structured content */}
-                    {!project.problem && project.description && (
-                      <p className="text-slate-300 text-sm leading-relaxed">{project.description}</p>
-                    )}
-                  </div>
+                  <p className="text-slate-300 text-base leading-relaxed mb-6">
+                    {project.description}
+                  </p>
 
                   {/* Highlights */}
                   <div className="space-y-3 mb-8">
