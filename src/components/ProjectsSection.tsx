@@ -5,16 +5,18 @@ import {
   ExternalLink,
   Star,
   Coffee,
-  ShoppingCart,
   BarChart3,
   Wifi,
   LayoutDashboard,
   CheckCircle2,
   TrendingUp,
   AlertTriangle,
+  Zap,
+  Clock,
+  MessageCircle,
 } from "lucide-react";
 
-// Inline SVG — Github was removed from lucide-react
+// Inline SVG — Github
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
@@ -23,44 +25,49 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 const projects = [
   {
-    id: "project-warkop-modern",
+    id: "project-warkop-sentosa",
     featured: true,
     status: "Live",
     statusColor: "bg-emerald-500",
-    category: "Web Application",
-    title: "Warkop Modern App",
+    category: "Commercial Landing Page",
+    title: "Warkop Sentosa (Landing Page & Menu Digital)",
     icon: Coffee,
     iconColor: "text-amber-400",
     description:
-      "Aplikasi manajemen warkop (warung kopi) modern berbasis web dengan fitur pemesanan digital, manajemen menu real-time, dashboard analitik penjualan, dan sistem loyalty pelanggan. Dibangun untuk meningkatkan efisiensi operasional dan pengalaman pelanggan.",
+      "Landing page komersial responsif untuk kedai kopi dan tempat nongkrong kekinian di Senopati. Dirancang dengan estetika warm warkop, arsitektur Double-Bezel, katalog menu harga merakyat, integrasi ulasan Google Maps asli, dan pemesanan via WhatsApp.",
+    problem:
+      "Warkop modern di Senopati membutuhkan web branding yang membumi dan ramah kantong mahasiswa/pekerja muda, bukan kaku ala kafe mahal. Pelanggan membutuhkan kejelasan fasilitas nugas (WiFi kencang, colokan melimpah, buka sampai subuh) dan transparansi harga menu.",
+    solution:
+      "Membangun landing page berkecepatan tinggi dengan Next.js App Router, Tailwind CSS v4, dan arsitektur UI Double-Bezel dari agentic-awesome-skills. Dilengkapi katalog menu broken-grid dengan stiker organik (Best Seller, Gorengan Dadakan), ulasan Google Maps asli (rating 4.9/5.0), dan tombol order instan WhatsApp.",
+    result:
+      "Website 100% mobile-friendly dengan 1-col responsive stacking, zero text clipping, navigasi smooth-scroll anti-tertutup navbar header, serta loading secepat kilat yang dideploy otomatis di Vercel via GitHub CI/CD.",
     highlights: [
-      { icon: ShoppingCart, text: "Sistem order digital" },
-      { icon: BarChart3, text: "Dashboard analitik real-time" },
-      { icon: Wifi, text: "Mode offline-first PWA" },
+      { icon: Wifi, text: "WiFi 150 Mbps & Colokan di Setiap Meja" },
+      { icon: Coffee, text: "Katalog Menu Merakyat + WhatsApp Order" },
+      { icon: Star, text: "Ulasan Google Maps Terverifikasi (Rating 4.9/5.0)" },
     ],
-    tech: ["Next.js", "Tailwind CSS", "Supabase", "Vercel", "TypeScript"],
+    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
     techColors: {
       "Next.js": "bg-white/10 text-white",
       "Tailwind CSS": "bg-cyan-500/15 text-cyan-300",
-      Supabase: "bg-emerald-500/15 text-emerald-300",
-      Vercel: "bg-slate-500/15 text-slate-300",
       TypeScript: "bg-blue-500/15 text-blue-300",
+      Vercel: "bg-slate-500/15 text-slate-300",
     },
-    demoUrl: "#",
-    codeUrl: "#",
-    gradient: "from-cyan-500/20 via-indigo-500/10 to-violet-500/20",
-    accentColor: "text-cyan-400",
-    highlightIconBg: "bg-cyan-500/15",
-    highlightIconColor: "text-cyan-400",
-    borderColor: "rgba(6, 182, 212, 0.2)",
-    topBorderGlow: "via-cyan-400",
-    domain: "warkop-modern.vercel.app",
-    mockupBorder: "border-cyan-500/20",
-    mockupShadow: "shadow-cyan-500/10 group-hover:shadow-cyan-500/20",
-    buttonGradient: "from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500",
-    buttonShadow: "shadow-cyan-500/25",
-    floatingBadgeBg: "bg-gradient-to-r from-cyan-500 to-indigo-600",
-    floatingBadgeShadow: "shadow-cyan-500/30",
+    demoUrl: "https://warkop-modern-app.vercel.app/",
+    codeUrl: "https://github.com/zeno-syne/warkop-modern-app",
+    gradient: "from-amber-500/20 via-orange-500/10 to-red-500/20",
+    accentColor: "text-amber-400",
+    highlightIconBg: "bg-amber-500/15",
+    highlightIconColor: "text-amber-400",
+    borderColor: "rgba(245, 158, 11, 0.25)",
+    topBorderGlow: "via-amber-400",
+    domain: "warkop-modern-app.vercel.app",
+    mockupBorder: "border-amber-500/25",
+    mockupShadow: "shadow-amber-500/15 group-hover:shadow-amber-500/25",
+    buttonGradient: "from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500",
+    buttonShadow: "shadow-amber-500/25",
+    floatingBadgeBg: "bg-gradient-to-r from-amber-500 to-orange-600",
+    floatingBadgeShadow: "shadow-amber-500/30",
     mockupType: "warkop" as const,
   },
   {
@@ -74,10 +81,16 @@ const projects = [
     iconColor: "text-indigo-400",
     description:
       "Membangun antarmuka Dasbor Admin responsif berbasis Next.js untuk memantau metrik penjualan real-time. Mencakup ringkasan statistik dan tabel manajemen pesanan dengan identifikasi status visual.",
+    problem:
+      "Pemilik bisnis kesulitan memantau metrik omset harian, tren pertumbuhan pesanan, serta status stok kritis secara terpusat dan cepat di berbagai perangkat.",
+    solution:
+      "Merancang dasbor analitik POS interaktif dengan kartu statistik metrik real-time, visualisasi grafik performa bisnis, dan tabel riwayat transaksi dengan badge status visual.",
+    result:
+      "Antarmuka admin responsif yang cepat dan mudah dibaca oleh manajer operasional dan kasir, memangkas waktu pelaporan harian secara signifikan.",
     highlights: [
       { icon: BarChart3, text: "Pemantauan metrik penjualan real-time" },
       { icon: LayoutDashboard, text: "Ringkasan statistik performa bisnis responsif" },
-      { icon: CheckCircle2, text: "Tabel manajemen pesanan dengan identifikasi status visual" },
+      { icon: CheckCircle2, text: "Tabel manajemen pesanan dengan status visual" },
     ],
     tech: ["Next.js", "Tailwind CSS", "Lucide Icons"],
     techColors: {
@@ -106,47 +119,99 @@ const projects = [
 
 function WarkopMockup() {
   return (
-    <div className="p-6 bg-gradient-to-br from-slate-900 to-slate-800 min-h-[280px]">
-      {/* Nav */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-2">
-          <Coffee className="w-5 h-5 text-amber-400" />
-          <span className="font-bold text-white text-sm">Warkop Modern</span>
+    <div className="p-5 sm:p-6 bg-gradient-to-br from-[#1C1612] via-[#14110E] to-[#100D0A] min-h-[300px]">
+      {/* Mini Warkop Header */}
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-amber-900/30">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white shadow-md shadow-orange-500/20">
+            <Coffee className="w-4 h-4 stroke-[2.5]" />
+          </div>
+          <div>
+            <div className="flex items-center gap-1.5">
+              <span className="font-extrabold text-white text-xs sm:text-sm font-sans">Warkop Sentosa</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            </div>
+            <p className="text-[10px] text-amber-300/80 font-medium">Senopati &bull; s/d 01.00 Subuh</p>
+          </div>
         </div>
-        <div className="flex gap-2">
-          <div className="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-medium">Menu</div>
-          <div className="px-3 py-1 rounded-lg bg-slate-700 text-slate-400 text-xs">Order</div>
+
+        <div className="flex items-center gap-1.5">
+          <span className="px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[10px] font-bold">
+            WiFi 150 Mbps
+          </span>
+          <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[10px] font-bold">
+            ⭐ 4.9/5.0
+          </span>
         </div>
       </div>
 
-      {/* Menu Cards */}
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      {/* Mini Headline */}
+      <div className="mb-3.5 px-1">
+        <p className="text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-0.5">Tempat Nongkrong Asik</p>
+        <p className="text-white text-xs sm:text-sm font-black leading-snug">
+          Kopi Enak, WiFi Kencang, Nongkrong Sampai Pagi.
+        </p>
+      </div>
+
+      {/* Menu Cards Grid */}
+      <div className="grid grid-cols-2 gap-2.5 mb-4">
         {[
-          { name: "Kopi Susu", price: "Rp 15.000", emoji: "☕", color: "from-amber-900/40 to-amber-800/20" },
-          { name: "Matcha Latte", price: "Rp 22.000", emoji: "🍵", color: "from-emerald-900/40 to-emerald-800/20" },
-          { name: "Americano", price: "Rp 18.000", emoji: "🖤", color: "from-slate-700/60 to-slate-600/30" },
-          { name: "Caramel Frap", price: "Rp 28.000", emoji: "🥤", color: "from-orange-900/40 to-orange-800/20" },
+          {
+            name: "Es Kopi Susu Sentosa",
+            price: "Rp 20.000",
+            badge: "BEST SELLER",
+            badgeColor: "bg-red-600 text-white",
+            emoji: "☕",
+          },
+          {
+            name: "Indomie Internet",
+            price: "Rp 18.000",
+            badge: "BEST SELLER",
+            badgeColor: "bg-red-600 text-white",
+            emoji: "🍜",
+          },
+          {
+            name: "Roti Bakar Keju",
+            price: "Rp 15.000",
+            badge: "FAVORIT",
+            badgeColor: "bg-amber-400 text-black",
+            emoji: "🥪",
+          },
+          {
+            name: "Mendoan Anget",
+            price: "Rp 12.000",
+            badge: "DADAKAN",
+            badgeColor: "bg-amber-400 text-black",
+            emoji: "🥟",
+          },
         ].map((item) => (
           <div
             key={item.name}
-            className={`bg-gradient-to-br ${item.color} border border-white/5 rounded-xl p-3 cursor-pointer hover:border-amber-500/30 transition-colors`}
+            className="p-2.5 rounded-xl bg-[#221A15] border border-amber-900/40 hover:border-amber-500/50 transition-all flex flex-col justify-between"
           >
-            <span className="text-2xl block mb-1">{item.emoji}</span>
-            <p className="text-white text-xs font-semibold">{item.name}</p>
-            <p className="text-amber-300 text-xs font-bold">{item.price}</p>
+            <div className="flex items-start justify-between gap-1 mb-1">
+              <span className="text-lg">{item.emoji}</span>
+              <span className={`px-1.5 py-0.5 rounded text-[8px] font-black uppercase tracking-wider ${item.badgeColor}`}>
+                {item.badge}
+              </span>
+            </div>
+            <div>
+              <p className="text-white text-[11px] font-bold truncate">{item.name}</p>
+              <p className="text-amber-400 text-xs font-black">{item.price}</p>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Order Summary Bar */}
-      <div className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-600/80 to-orange-600/80">
-        <div className="text-xs text-white">
-          <span className="font-bold">3 item</span> · Total{" "}
-          <span className="font-black">Rp 55.000</span>
+      {/* WhatsApp CTA Action Bar */}
+      <div className="flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-emerald-950/80 to-[#1C1612] border border-emerald-600/30">
+        <div className="flex items-center gap-2 text-[11px] text-white">
+          <MessageCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+          <span className="font-semibold truncate">Pesan &amp; Tanya Meja via WhatsApp</span>
         </div>
-        <button className="px-3 py-1.5 rounded-lg bg-white text-amber-700 text-xs font-black">
-          Pesan Sekarang →
-        </button>
+        <span className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold whitespace-nowrap">
+          Order WA →
+        </span>
       </div>
     </div>
   );
@@ -337,11 +402,11 @@ export default function ProjectsSection() {
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Beberapa karya terbaik yang pernah saya bangun untuk klien dan
-            project pribadi.
+            project komersial nyata.
           </p>
         </div>
 
-        {/* Featured Project Card */}
+        {/* Featured Project Cards */}
         {projects.map((project) => {
           const ProjectIcon = project.icon;
           return (
@@ -362,12 +427,12 @@ export default function ProjectsSection() {
                 className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${project.topBorderGlow} to-transparent opacity-60`}
               />
 
-              <div className="relative z-10 p-8 md:p-12">
-                <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="relative z-10 p-6 sm:p-8 md:p-12">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
                   {/* Left: Content */}
                   <div>
                     {/* Badges */}
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-2 mb-5">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-semibold border border-emerald-500/25">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         {project.status}
@@ -385,25 +450,39 @@ export default function ProjectsSection() {
                       <span>{project.title}</span>
                     </h3>
 
-                    <p className="text-slate-300 text-base leading-relaxed mb-6">
-                      {project.description}
-                    </p>
+                    {/* Problem / Solution / Result Structured Case Study */}
+                    <div className="space-y-3 mb-6">
+                      <div className="rounded-xl p-3.5 bg-red-500/8 border border-red-500/20 text-xs sm:text-sm">
+                        <p className="text-[11px] font-bold text-red-400 uppercase tracking-widest mb-1">🔴 Masalah</p>
+                        <p className="text-slate-300 leading-relaxed font-normal">{project.problem}</p>
+                      </div>
+
+                      <div className="rounded-xl p-3.5 bg-cyan-500/8 border border-cyan-500/20 text-xs sm:text-sm">
+                        <p className="text-[11px] font-bold text-cyan-400 uppercase tracking-widest mb-1">💡 Solusi</p>
+                        <p className="text-slate-300 leading-relaxed font-normal">{project.solution}</p>
+                      </div>
+
+                      <div className="rounded-xl p-3.5 bg-emerald-500/8 border border-emerald-500/20 text-xs sm:text-sm">
+                        <p className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest mb-1">✅ Hasil</p>
+                        <p className="text-slate-300 leading-relaxed font-normal">{project.result}</p>
+                      </div>
+                    </div>
 
                     {/* Highlights */}
-                    <div className="space-y-3 mb-8">
+                    <div className="space-y-2.5 mb-6">
                       {project.highlights.map((h) => {
                         const HIcon = h.icon;
                         return (
                           <div
                             key={h.text}
-                            className="flex items-center gap-3 text-sm text-slate-300"
+                            className="flex items-center gap-3 text-xs sm:text-sm text-slate-300"
                           >
                             <div
-                              className={`w-8 h-8 rounded-lg ${project.highlightIconBg} flex items-center justify-center flex-shrink-0`}
+                              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg ${project.highlightIconBg} flex items-center justify-center flex-shrink-0`}
                             >
                               <HIcon className={`w-4 h-4 ${project.highlightIconColor}`} />
                             </div>
-                            {h.text}
+                            <span className="font-medium">{h.text}</span>
                           </div>
                         );
                       })}
@@ -414,7 +493,7 @@ export default function ProjectsSection() {
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-semibold ${
+                          className={`px-3 py-1 rounded-lg text-xs font-semibold ${
                             project.techColors[t as keyof typeof project.techColors] ||
                             "bg-slate-700/50 text-slate-300"
                           }`}
@@ -431,7 +510,7 @@ export default function ProjectsSection() {
                         id={`${project.id}-demo-btn`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r ${project.buttonGradient} text-white text-sm font-bold transition-all duration-300 shadow-lg ${project.buttonShadow} hover:-translate-y-0.5`}
+                        className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r ${project.buttonGradient} text-white text-xs sm:text-sm font-bold transition-all duration-300 shadow-lg ${project.buttonShadow} hover:-translate-y-0.5 active:scale-95`}
                       >
                         <ExternalLink className="w-4 h-4" />
                         Live Demo
@@ -441,7 +520,7 @@ export default function ProjectsSection() {
                         id={`${project.id}-code-btn`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-6 py-3 rounded-xl glass neon-border text-white text-sm font-bold hover:-translate-y-0.5 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass neon-border text-white text-xs sm:text-sm font-bold hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                       >
                         <GithubIcon className="w-4 h-4" />
                         View Code
@@ -450,16 +529,16 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Right: App Mockup */}
-                  <div className="relative">
+                  <div className="relative mt-4 lg:mt-0">
                     <div
                       className={`relative rounded-2xl overflow-hidden glass-card border ${project.mockupBorder} shadow-2xl ${project.mockupShadow} transition-shadow duration-500`}
                     >
                       {/* Browser Chrome */}
-                      <div className="flex items-center gap-1.5 px-4 py-3 border-b border-slate-700/50">
+                      <div className="flex items-center gap-1.5 px-4 py-3 border-b border-slate-700/50 bg-slate-900/60">
                         <div className="w-3 h-3 rounded-full bg-red-500/70" />
                         <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                         <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
-                        <div className="flex-1 mx-4 h-6 rounded-md bg-slate-700/50 flex items-center px-3">
+                        <div className="flex-1 mx-3 sm:mx-4 h-6 rounded-md bg-slate-800/70 flex items-center px-3">
                           <span className="text-[10px] text-slate-400 font-mono truncate">
                             {project.domain}
                           </span>
@@ -476,7 +555,7 @@ export default function ProjectsSection() {
 
                     {/* Floating badge */}
                     <div
-                      className={`absolute -top-3 -right-3 px-3 py-1.5 rounded-full ${project.floatingBadgeBg} text-white text-xs font-bold shadow-lg ${project.floatingBadgeShadow} animate-pulse-glow`}
+                      className={`absolute -top-3 -right-3 px-3 py-1.5 rounded-full ${project.floatingBadgeBg} text-white text-[11px] font-bold shadow-lg ${project.floatingBadgeShadow} animate-pulse-glow`}
                     >
                       ⚡ Deployed on Vercel
                     </div>
