@@ -11,8 +11,6 @@ import {
   CheckCircle2,
   TrendingUp,
   AlertTriangle,
-  Zap,
-  Clock,
   MessageCircle,
 } from "lucide-react";
 
@@ -25,12 +23,12 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 const projects = [
   {
-    id: "project-warkop-sentosa",
+    id: "project-warkop-modern",
     featured: true,
     status: "Live",
     statusColor: "bg-emerald-500",
     category: "Commercial Landing Page",
-    title: "Warkop Sentosa (Landing Page & Menu Digital)",
+    title: "Warkop Modern App (Warkop Sentosa)",
     icon: Coffee,
     iconColor: "text-amber-400",
     description:
@@ -204,15 +202,20 @@ function WarkopMockup() {
       </div>
 
       {/* WhatsApp CTA Action Bar */}
-      <div className="flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-emerald-950/80 to-[#1C1612] border border-emerald-600/30">
+      <a
+        href="https://warkop-modern-app.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-emerald-950/80 to-[#1C1612] border border-emerald-600/30 hover:border-emerald-500 transition-colors group/live"
+      >
         <div className="flex items-center gap-2 text-[11px] text-white">
           <MessageCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-          <span className="font-semibold truncate">Pesan &amp; Tanya Meja via WhatsApp</span>
+          <span className="font-semibold truncate">Buka Website Warkop Sentosa</span>
         </div>
-        <span className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold whitespace-nowrap">
-          Order WA →
+        <span className="px-2.5 py-1 rounded-lg bg-emerald-600 group-hover/live:bg-emerald-500 text-white text-[10px] font-bold whitespace-nowrap flex items-center gap-1">
+          Buka Web →
         </span>
-      </div>
+      </a>
     </div>
   );
 }
@@ -445,10 +448,18 @@ export default function ProjectsSection() {
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 flex items-center gap-3">
-                      <ProjectIcon className={`w-8 h-8 ${project.iconColor} shrink-0`} />
-                      <span>{project.title}</span>
-                    </h3>
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/title block mb-4"
+                    >
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white group-hover/title:text-amber-300 transition-colors flex items-center gap-3">
+                        <ProjectIcon className={`w-8 h-8 ${project.iconColor} shrink-0`} />
+                        <span>{project.title}</span>
+                        <ExternalLink className="w-5 h-5 text-slate-500 group-hover/title:text-amber-300 transition-colors hidden sm:inline-block" />
+                      </h3>
+                    </a>
 
                     {/* Problem / Solution / Result Structured Case Study */}
                     <div className="space-y-3 mb-6">
@@ -503,7 +514,7 @@ export default function ProjectsSection() {
                       ))}
                     </div>
 
-                    {/* Action Buttons */}
+                    {/* Action Buttons: Live Demo and View Code */}
                     <div className="flex flex-wrap gap-3">
                       <a
                         href={project.demoUrl}
@@ -528,21 +539,26 @@ export default function ProjectsSection() {
                     </div>
                   </div>
 
-                  {/* Right: App Mockup */}
+                  {/* Right: Interactive App Mockup */}
                   <div className="relative mt-4 lg:mt-0">
                     <div
                       className={`relative rounded-2xl overflow-hidden glass-card border ${project.mockupBorder} shadow-2xl ${project.mockupShadow} transition-shadow duration-500`}
                     >
-                      {/* Browser Chrome */}
+                      {/* Browser Chrome with Clickable URL Bar */}
                       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-slate-700/50 bg-slate-900/60">
                         <div className="w-3 h-3 rounded-full bg-red-500/70" />
                         <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                         <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
-                        <div className="flex-1 mx-3 sm:mx-4 h-6 rounded-md bg-slate-800/70 flex items-center px-3">
-                          <span className="text-[10px] text-slate-400 font-mono truncate">
-                            {project.domain}
-                          </span>
-                        </div>
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 mx-3 sm:mx-4 h-6 rounded-md bg-slate-800/70 hover:bg-slate-700/70 flex items-center justify-between px-3 text-[10px] text-slate-300 font-mono transition-colors group/url"
+                          title="Klik untuk membuka situs live"
+                        >
+                          <span className="truncate">{project.domain}</span>
+                          <ExternalLink className="w-3 h-3 text-slate-400 group-hover/url:text-white shrink-0 ml-1" />
+                        </a>
                       </div>
 
                       {/* App Preview */}
@@ -553,12 +569,16 @@ export default function ProjectsSection() {
                       )}
                     </div>
 
-                    {/* Floating badge */}
-                    <div
-                      className={`absolute -top-3 -right-3 px-3 py-1.5 rounded-full ${project.floatingBadgeBg} text-white text-[11px] font-bold shadow-lg ${project.floatingBadgeShadow} animate-pulse-glow`}
+                    {/* Floating badge (Clickable to Live Demo) */}
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`absolute -top-3 -right-3 px-3 py-1.5 rounded-full ${project.floatingBadgeBg} text-white text-[11px] font-bold shadow-lg ${project.floatingBadgeShadow} hover:scale-105 active:scale-95 transition-transform flex items-center gap-1`}
                     >
-                      ⚡ Deployed on Vercel
-                    </div>
+                      <span>⚡ Live di Vercel</span>
+                      <ExternalLink className="w-3 h-3 text-white" />
+                    </a>
                   </div>
                 </div>
               </div>
