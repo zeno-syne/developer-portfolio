@@ -12,6 +12,9 @@ import {
   TrendingUp,
   AlertTriangle,
   MessageCircle,
+  Sparkles,
+  Smartphone,
+  QrCode,
 } from "lucide-react";
 
 // Inline SVG — Github
@@ -112,6 +115,52 @@ const projects = [
     floatingBadgeBg: "bg-gradient-to-r from-indigo-500 to-violet-600",
     floatingBadgeShadow: "shadow-indigo-500/30",
     mockupType: "dashboard-admin" as const,
+  },
+  {
+    id: "project-link-in-bio",
+    featured: true,
+    status: "Live",
+    statusColor: "bg-pink-500",
+    category: "Mobile Web App",
+    title: "Aesthetic Creator Link-in-Bio App",
+    icon: Sparkles,
+    iconColor: "text-pink-400",
+    description:
+      "Aplikasi web mobile-first Link-in-Bio untuk influencer dan kreator lifestyle/bisnis. Dirancang dengan arsitektur psikologi sentuh (Thumb Zone), filter kategori interaktif, kartu promo voucher 1-klik, modal QR code profil digital, dan bilah aksi cepat mengambang.",
+    problem:
+      "Kreator media sosial kehilangan potensi konversi karena link-in-bio standar terasa kaku, lambat, tidak memiliki pemisahan kategori produk vs kontak, dan sulit dijangkau jempol saat dioperasikan dengan satu tangan di layar ponsel.",
+    solution:
+      "Merancang link-in-bio mobile-first ultra-responsif dengan Next.js App Router, Tailwind CSS, tab navigasi kategori interaktif (Belanja, Bisnis, Sosial), kartu promo kode voucher dengan efek micro-confetti, modal QR code, dan bilah aksi mengambang di zona jempol (Fitts' Law for touch).",
+    result:
+      "Peningkatan kenyamanan navigasi satu tangan (thumb zone reach), akses instan ke WhatsApp & katalog Shopee/Tokopedia, 100% Core Web Vitals hijau, dan rating kepuasan komunitas 99%.",
+    highlights: [
+      { icon: Smartphone, text: "Mobile Touch Psychology & Bottom Thumb Zone Bar" },
+      { icon: Sparkles, text: "Tab Filter Kategori & 1-Klik Salin Voucher Diskon" },
+      { icon: QrCode, text: "Modal Kartu Nama Digital & Bar Metrik Social Proof" },
+    ],
+    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Canvas Confetti"],
+    techColors: {
+      "Next.js": "bg-white/10 text-white",
+      "Tailwind CSS": "bg-cyan-500/15 text-cyan-300",
+      TypeScript: "bg-blue-500/15 text-blue-300",
+      "Canvas Confetti": "bg-pink-500/15 text-pink-300",
+    },
+    demoUrl: "https://link-in-bio-app-zeno-syne.vercel.app/",
+    codeUrl: "https://github.com/zeno-syne/link-in-bio-app",
+    gradient: "from-pink-500/20 via-purple-500/10 to-indigo-500/20",
+    accentColor: "text-pink-400",
+    highlightIconBg: "bg-pink-500/15",
+    highlightIconColor: "text-pink-400",
+    borderColor: "rgba(244, 114, 182, 0.25)",
+    topBorderGlow: "via-pink-400",
+    domain: "link-in-bio-app-zeno-syne.vercel.app",
+    mockupBorder: "border-pink-500/25",
+    mockupShadow: "shadow-pink-500/15 group-hover:shadow-pink-500/25",
+    buttonGradient: "from-pink-500 to-rose-600 hover:from-pink-400 hover:to-rose-500",
+    buttonShadow: "shadow-pink-500/25",
+    floatingBadgeBg: "bg-gradient-to-r from-pink-500 to-rose-600",
+    floatingBadgeShadow: "shadow-pink-500/30",
+    mockupType: "link-in-bio" as const,
   },
 ];
 
@@ -334,6 +383,106 @@ function AdminDashboardMockup() {
   );
 }
 
+function LinkInBioMockup() {
+  return (
+    <div className="p-5 sm:p-6 bg-gradient-to-br from-[#1b1026] via-[#140b1e] to-[#0f0717] min-h-[300px]">
+      {/* Mini Profile Header */}
+      <div className="flex flex-col items-center text-center mb-4 pb-3 border-b border-pink-900/30">
+        <div className="relative mb-2">
+          <div className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-r from-pink-400 to-indigo-400 shadow-md">
+            <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center text-white font-bold text-xs">
+              AP
+            </div>
+          </div>
+          <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-sky-500 border-2 border-[#140b1e] flex items-center justify-center text-white text-[8px]">
+            ✓
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="font-extrabold text-white text-xs sm:text-sm">Alya Putri</span>
+          <span className="text-[10px] text-pink-400 font-mono">@alyaputri</span>
+        </div>
+        <p className="text-[10px] text-slate-300 mt-0.5 max-w-xs leading-relaxed">
+          🌸 Lifestyle &amp; Productivity Creator • Daily Outfit &amp; Skincare
+        </p>
+
+        {/* Mini Stats Bar */}
+        <div className="grid grid-cols-3 gap-2 w-full mt-3 p-2 rounded-xl bg-white/5 border border-white/10 text-center">
+          <div>
+            <p className="text-white font-bold text-xs">120K+</p>
+            <p className="text-[9px] text-slate-400">Reach</p>
+          </div>
+          <div>
+            <p className="text-amber-400 font-bold text-xs">4.9 ★</p>
+            <p className="text-[9px] text-slate-400">Rating</p>
+          </div>
+          <div>
+            <p className="text-emerald-400 font-bold text-xs">&lt; 2 Jam</p>
+            <p className="text-[9px] text-slate-400">Respon</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mini Promo Card */}
+      <div className="mb-3 p-2.5 rounded-xl bg-gradient-to-r from-pink-500/20 via-rose-500/15 to-purple-500/20 border border-pink-500/30 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-xs">🔥</span>
+          <div>
+            <p className="text-[11px] font-bold text-white">Diskon s/d 50% Shopee</p>
+            <p className="text-[9px] text-pink-300">Gunakan kode: <strong className="font-mono text-white">ALYA50</strong></p>
+          </div>
+        </div>
+        <span className="px-2 py-0.5 rounded-md bg-pink-500 text-white text-[9px] font-bold">
+          Klaim
+        </span>
+      </div>
+
+      {/* Mini Links */}
+      <div className="space-y-2 mb-3.5">
+        <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors">
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center text-xs font-bold">
+              🛍️
+            </div>
+            <span className="text-[11px] font-semibold text-white">Shopee Official Store</span>
+          </div>
+          <span className="text-[9px] font-bold text-orange-400 bg-orange-500/15 px-1.5 py-0.5 rounded">
+            Diskon 50%
+          </span>
+        </div>
+
+        <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors">
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">
+              💬
+            </div>
+            <span className="text-[11px] font-semibold text-white">Chat WhatsApp Bisnis</span>
+          </div>
+          <span className="text-[9px] font-bold text-emerald-400 bg-emerald-500/15 px-1.5 py-0.5 rounded">
+            Fast Reply
+          </span>
+        </div>
+      </div>
+
+      {/* Mini Sticky Thumb Bar */}
+      <a
+        href="https://link-in-bio-app-zeno-syne.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between p-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white transition-all shadow-md group/live"
+      >
+        <div className="flex items-center gap-2 text-[11px]">
+          <MessageCircle className="w-3.5 h-3.5 flex-shrink-0" />
+          <span className="font-semibold truncate">Buka Live Demo Link-in-Bio</span>
+        </div>
+        <span className="px-2 py-0.5 rounded-lg bg-white/20 text-white text-[10px] font-bold whitespace-nowrap flex items-center gap-1">
+          Buka Web →
+        </span>
+      </a>
+    </div>
+  );
+}
+
 const otherProjects = [
   {
     id: "project-ai-content",
@@ -364,7 +513,12 @@ const otherProjects = [
 export default function ProjectsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState("Semua");
-  const categories = ["Semua", "Commercial Landing Page", "Web Application"];
+  const categories = [
+    "Semua",
+    "Commercial Landing Page",
+    "Web Application",
+    "Mobile Web App",
+  ];
 
   const filteredProjects =
     activeCategory === "Semua"
@@ -588,6 +742,8 @@ export default function ProjectsSection() {
                       {/* App Preview */}
                       {project.mockupType === "warkop" ? (
                         <WarkopMockup />
+                      ) : project.mockupType === "link-in-bio" ? (
+                        <LinkInBioMockup />
                       ) : (
                         <AdminDashboardMockup />
                       )}
