@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ExternalLink,
   Star,
@@ -97,7 +97,7 @@ const projects = [
       "Lucide Icons": "bg-purple-500/15 text-purple-300",
     },
     demoUrl: "https://dashboard-admin-app-nine.vercel.app/",
-    codeUrl: "#",
+    codeUrl: "https://github.com/zeno-syne/dashboard-admin-app",
     gradient: "from-indigo-500/20 via-purple-500/10 to-pink-500/20",
     accentColor: "text-indigo-400",
     highlightIconBg: "bg-indigo-500/15",
@@ -363,6 +363,13 @@ const otherProjects = [
 
 export default function ProjectsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeCategory, setActiveCategory] = useState("Semua");
+  const categories = ["Semua", "Commercial Landing Page", "Web Application"];
+
+  const filteredProjects =
+    activeCategory === "Semua"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -395,7 +402,7 @@ export default function ProjectsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 section-reveal">
+        <div className="text-center mb-10 section-reveal">
           <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold tracking-widest uppercase border border-indigo-500/20 mb-4">
             Portfolio
           </span>
@@ -409,8 +416,25 @@ export default function ProjectsSection() {
           </p>
         </div>
 
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12 section-reveal">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                activeCategory === cat
+                  ? "bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/25 scale-105"
+                  : "glass text-slate-400 hover:text-white hover:border-slate-600"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         {/* Featured Project Cards */}
-        {projects.map((project) => {
+        {filteredProjects.map((project) => {
           const ProjectIcon = project.icon;
           return (
             <div

@@ -9,6 +9,8 @@ import {
   CheckCircle2,
   Loader2,
   Phone,
+  Copy,
+  Check,
 } from "lucide-react";
 
 export default function ContactSection() {
@@ -21,6 +23,7 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,6 +61,14 @@ export default function ContactSection() {
   const whatsappMessage = encodeURIComponent(
     `Halo Agung! Saya ${formState.name || "[nama Anda]"} ingin mendiskusikan proyek web. Apakah Anda tersedia?`
   );
+
+  const handleCopyEmail = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText("agung@devstudio.id");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const contactInfo = [
     {
@@ -168,11 +179,33 @@ export default function ContactSection() {
                       {info.value}
                     </p>
                   </div>
-                  <span
-                    className={`text-[10px] font-semibold ${info.color} px-2 py-0.5 rounded-full ${info.bg} border ${info.border} whitespace-nowrap`}
-                  >
-                    {info.badge}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {info.label === "Email" && (
+                      <button
+                        onClick={handleCopyEmail}
+                        type="button"
+                        className="px-2.5 py-1 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-[11px] font-semibold border border-cyan-500/30 flex items-center gap-1 transition-colors cursor-pointer"
+                        title="Salin alamat email"
+                      >
+                        {copied ? (
+                          <>
+                            <Check className="w-3 h-3 text-emerald-400" />
+                            <span className="text-emerald-400">Tersalin!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3 h-3" />
+                            <span>Salin</span>
+                          </>
+                        )}
+                      </button>
+                    )}
+                    <span
+                      className={`text-[10px] font-semibold ${info.color} px-2 py-0.5 rounded-full ${info.bg} border ${info.border} whitespace-nowrap`}
+                    >
+                      {info.badge}
+                    </span>
+                  </div>
                 </a>
               );
             })}

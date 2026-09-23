@@ -28,7 +28,7 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 const socialLinks = [
   {
     id: "footer-github",
-    href: "https://github.com/zeno",
+    href: "https://github.com/zeno-syne",
     Icon: GithubIcon,
     label: "GitHub",
     color: "hover:text-white",
@@ -59,6 +59,7 @@ const socialLinks = [
 const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },
+  { href: "#testimonials", label: "Testimonials" },
   { href: "#tech", label: "Tech Stack" },
   { href: "#contact", label: "Contact" },
 ];

@@ -134,12 +134,24 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass neon-border mb-8 animate-fadeInUp">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-xs font-semibold text-cyan-300 tracking-widest uppercase">
-            Available for Projects
-          </span>
+        {/* Top Announcement & Status Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8 animate-fadeInUp">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass neon-border">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs font-semibold text-cyan-300 tracking-widest uppercase">
+              Available for Projects
+            </span>
+          </div>
+
+          <a
+            href="https://warkop-modern-app.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/pill inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 hover:text-white transition-all duration-300 text-xs font-bold"
+          >
+            <span>☕ Proyek Baru: Warkop Sentosa Live</span>
+            <span className="group-hover/pill:translate-x-0.5 transition-transform duration-200">→</span>
+          </a>
         </div>
 
         {/* Typewriter Role */}
@@ -158,7 +170,7 @@ export default function HeroSection() {
           className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight mb-6 animate-fadeInUp"
           style={{ animationDelay: "0.2s" }}
         >
-          Membangun Web &{" "}
+          Membangun Web &amp;{" "}
           <br />
           <span className="gradient-text">Aplikasi Cepat</span>
           <br />
@@ -184,18 +196,18 @@ export default function HeroSection() {
           <a
             href="#projects"
             id="hero-portfolio-btn"
-            className="group flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-base hover:from-cyan-400 hover:to-indigo-500 transition-all duration-300 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:-translate-y-1"
+            className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto rounded-2xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-base hover:from-cyan-400 hover:to-indigo-500 transition-all duration-300 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:-translate-y-1"
           >
-            Lihat Portofolio
+            Lihat Karya &amp; Live Demo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
           <a
             href="#contact"
             id="hero-contact-btn"
-            className="group flex items-center gap-2 px-8 py-4 rounded-2xl glass neon-border text-white font-bold text-base hover:border-cyan-400/60 hover:-translate-y-1 transition-all duration-300"
+            className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto rounded-2xl glass neon-border text-white font-bold text-base hover:border-cyan-400/60 hover:-translate-y-1 transition-all duration-300"
           >
             <MessageCircle className="w-5 h-5 text-cyan-400" />
-            Hubungi Saya
+            Mulai Diskusi Proyek
           </a>
         </div>
 
